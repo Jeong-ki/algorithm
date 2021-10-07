@@ -1,4 +1,1 @@
-a = []
-a.push(1)
-a.pop()
-console.log(a);
+console.log(10%2);
