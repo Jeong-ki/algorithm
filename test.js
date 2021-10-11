@@ -1,1 +1,1 @@
-console.log(10%2);
+console.log(6%5);
