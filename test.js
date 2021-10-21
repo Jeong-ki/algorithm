@@ -1,8 +1,10 @@
-const candidate = Array(45).fill().map((v, i) => i + 1);
-
-function shuffle(array) { 
-  array.sort(() => Math.random() - 0.5); 
+function solution(s, n) {
+  let answer = "";
+  for(let i=0; i<s.length; i++) {
+    let asc = s.charCodeAt(i);
+    answer += String.fromCharCode(asc + n);
+    console.log(answer);
+  }
 }
-shuffle(candidate);
 
-console.log(candidate); 
+solution("aa", 1);
