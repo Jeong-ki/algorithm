@@ -1,10 +1,7 @@
-function solution(s, n) {
-  let answer = "";
-  for(let i=0; i<s.length; i++) {
-    let asc = s.charCodeAt(i);
-    answer += String.fromCharCode(asc + n);
-    console.log(answer);
-  }
-}
+let a = [10, 11, 12, 13, 14, 15];
 
-solution("aa", 1);
+let answer = a.reduce(function(acc, v) {  // acc: 누적값 v:요소
+	return acc+1;  
+}, 0);  // 초기화 하는 값
+
+console.log(answer);
