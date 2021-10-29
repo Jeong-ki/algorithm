@@ -11,7 +11,8 @@
 function solution(s) {
   let answer;
   answer = s.filter(function(v, i) {
-    if(s.indexOf(v) === i) return true;
+    // if(s.indexOf(v) === i) return true;
+    return s.indexOf(v) === i;
   })
   return answer;
 }

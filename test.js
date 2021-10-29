@@ -1,3 +1,5 @@
-const str = 'Mozilla';
-console.log(str.substring(1, 3));
-console.log(str.substr(1, 3));
+let a = [
+  [1, 2, 3],
+  [4, 5, 6]
+]
+console.log(a[-1][-1]);
