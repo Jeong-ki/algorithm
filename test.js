@@ -1,3 +1,1 @@
-let a = [1, 2, 3]
-a[0] = 10
-console.log(a);
+const sum = d.reduce((prev, curr) =>{return prev + curr}, 0);
