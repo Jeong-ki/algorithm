@@ -5,10 +5,9 @@ function solution(s, t){
       answer.push(0);
       continue;
     }
-    for(let j=0; j<s.length; j++) {
-      if(j === i) continue;
-      if(s[j] === t) {
-        answer.push(Math.abs(i-j)+1);
+    for(let j=1; j<s.length; j++) {
+      if(s[i+j] === t || s[i-j] === t) { 
+        answer.push(j)
         break;
       }
     }

@@ -1,9 +1,15 @@
+// function solution(s){
+//   const str = s.toLowerCase();
+//   const iter = parseInt(s.length/2);
+//   for(let i=0; i<iter; i++) {
+//     if(str[i] !== str[s.length-1-i]) return "NO";
+//   }
+//   return "YES";
+// }
+
 function solution(s){
-  const iter = parseInt(s.length/2);
   const str = s.toLowerCase();
-  for(let i=0; i<iter; i++) {
-    if(str[i] !== str[s.length-1-i]) return "NO";
-  }
+  if(str.split('').reverse().join('') !== str) return "NO";
   return "YES";
 }
 
