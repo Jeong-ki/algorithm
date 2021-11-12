@@ -1,7 +1,7 @@
 function solution(str){
   let num = "";
   for(let x of str) {
-    if(Number(x) || Number(x)===0) num+=x;
+    if(!isNaN(x)) num+=x;
   }
   return Number(num);
 }
