@@ -3,7 +3,7 @@ function solution(n, k, card){
   for(let i=0; i<n; i++) {
     for(let j=i+1; j<n; j++) {
       for(let x=j+1; x<n; x++) {
-        answer.push(card[i]+card[j]+card[x]);
+        answer.push(card[i]+card[j]+card[x]); // 카드 세 값 더함
       }
     }
   }
