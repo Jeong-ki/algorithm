@@ -1,2 +1,2 @@
 
-console.log(2971215073%1234567);
+console.log("abcd"<"abde");
