@@ -1,2 +1,3 @@
+let value = 30;
 
-console.log("abcd"<"abde");
+console.log(value.toString(2));
