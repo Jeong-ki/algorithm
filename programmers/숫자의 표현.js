@@ -1,8 +1,8 @@
 function solution(n) {
   let count = 0;
-  let num = i;
-  if(num===n) count++;
   for(let i=1; i<=n; i++) {
+    let num = i;
+    if(num===n) count++;
     for(let j=i+1; j<=n; j++) {
       num += j;
       if(num===n) {
@@ -13,7 +13,7 @@ function solution(n) {
       }
     }
   }
-return count;
+  return count;
 }
 
 console.log(solution(15));
