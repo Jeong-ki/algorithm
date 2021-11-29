@@ -1,3 +1,3 @@
-let value = 30;
+let value = ['a'];
 
-console.log(value.toString(2));
+console.log(value[0]+value[0]);

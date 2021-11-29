@@ -1,21 +1,33 @@
-function solution(n, arr1, arr2) {
-  var answer = [];
-
-  for(let i=0; i<n; i++) {
-    let line = "";
-    let one = arr1[i].toString(2);
-    let two = arr2[i].toString(2);
-    for(let i=0; i<n; i++) {
-      if(one[(one.length-1) - i]==="1" || two[(two.length-1) - i]==="1") {
-        line = "#" + line;
-      } else {
-        line = " " + line;
-      }
+function solution(new_id) {
+  let id = new_id.toLowerCase(); // 1단계
+  const condition = "abcdefghijklmnopqrstuvwxyz0123456789-_.";
+  id = id.split('');
+  for(let i=0; i<id.length; i++) {
+    if(condition.indexOf(id[i]) === -1) { // 2단계
+      id.splice(i, 1);
+      i--;
     }
-    answer.push(line);
+    if(id[i]==="." && id[i-1]===".") { // 3단계
+      id.splice(i, 1);
+      i--;
+    }
   }
+  if(id[0] === ".") id.shift();  // 4단계
+  if(id[id.length-1] === ".") id.pop();
   
-  return answer;
+  if(id[0] === undefined) { // 5단계
+    return "aaa";
+  }
+
+  if(id.length>=16) { // 6단계
+    id = id.slice(0, 15);
+    if(id[id.length-1]===".") id.pop();
+  }
+
+  if(id.length === 2) return id[0]+id[1]+id[1]; // 7단계
+  else if(id.length === 1) return id[0]+id[0]+id[0];
+
+  return id.join('');
 }
 
-solution(5, [9, 20, 28, 18, 11], [30, 1, 21, 17, 28]);
+solution("...!@BaT#*..y.abcdefghijklm");
