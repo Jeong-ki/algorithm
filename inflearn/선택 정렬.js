@@ -1,7 +1,8 @@
 function solution(arr) {
   let temp;
+  let index
   for(let i=0; i<arr.length; i++) {
-    let index = i;
+    index = i;
     for(let j=i+1; j<arr.length; j++) {
       if(arr[index]>arr[j]) index = j;
     }
