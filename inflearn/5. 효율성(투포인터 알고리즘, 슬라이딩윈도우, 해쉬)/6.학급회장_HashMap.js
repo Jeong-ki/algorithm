@@ -1,6 +1,6 @@
 // hash
 
-// 막 푼 코드
+// 내가 푼 코드(Map 없이, 값이 주어져있어야함.)
 // function solution(s){  
 //   let candidate = ["A", "B", "C", "D", "E"];
 //   let count = [0, 0, 0, 0, 0];
