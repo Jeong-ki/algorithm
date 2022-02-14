@@ -5,4 +5,6 @@
 // regExp.test(str); // true
 // regExp.match(str); // ["is", index: 5]
 
-console.log(isNaN("1a1"));
+let a = true && "hi";
+
+console.log(a);
