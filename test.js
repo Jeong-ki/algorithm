@@ -7,4 +7,4 @@
 
 let a = true && "hi";
 
-console.log(a);
+console.log(false === "hi");
