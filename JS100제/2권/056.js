@@ -7,22 +7,15 @@ const nationWidth = {
 	'England' : 242900,
 };
 
-const w = nationWidth['korea'];
+let nation;
+let num = Number.MAX_SAFE_INTEGER;
 
-delete nationWidth['korea'];
-
-const entry = Object.entries(nationWidth);
-const values = Object.values(nationWidth);
-
-//gap에 최댓값 저장
-let gap = Math.max.apply(null, values);
-let item = [];
-
-for (let i in entry){
-  if (gap > Math.abs(entry[i][1] - w)){
-    gap = Math.abs(entry[i][1] - w);
-    item = entry[i];
+for (const x in nationWidth) {
+  if(x == "korea") continue;
+  if(Math.abs(nationWidth["korea"]-nationWidth[x]) < num) {
+    num = Math.abs(nationWidth["korea"]-nationWidth[x]);
+    nation = x;
   }
 }
 
-console.log(item[0], item[1] - w);
+console.log(nation, num);
