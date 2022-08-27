@@ -91,3 +91,32 @@ O(n^2 + 5n + 8) => O(n^2)
 4. 루프가 있으면 복잡도가 루프의 길이 곱하기 루프안에 있는 연산들이 된다.
 
 루프(반복문)이어도 반복되는 횟수가 정해져있으면 O(1)이라고 할 수 있다.
+
+## 공간 복잡도
+공간 복잡도: 입력되는 것을 제외하고 알고리즘 자체가 필요로하는 공간을 의미
+알고리즘 자체가 어떤 영향을 주는지를 보는 것
+
+공간 복잡도 in JS (Rules of Thumb)
+- Most primitives (booleans, numbers, undefined, null) are constant space
+  불리언, 숫자, undefined, null은 자바스크립트에서 모두 불변 공간이다.
+  입력의 크기와 상관없이 숫자가 1이든 1000이든 모두 불변 공간이라고 여긴다.
+- String require O(n) spae (where n is the string length)
+  문자열은 O(n) 공간이 필요하다.
+- Reference types are generally O(n), where n is the length (for arrays) or the number of keys (for objects)
+  Reference타입, 배열과 객체도 대부분 O(n)이다.
+
+## Logarithms
+- 어떤 알고리즘들은 O(1), O(n), O(n^2)처럼 빅오가 간단하지 않은 경우가 있다.
+- 빅오 표기들 중에 더 어렵거나 덜 흔한 수학 개념들이 포함되어 있을 수 있다.
+  그 중 자주 나오는 개념이 로그이다. O(log n)
+
+로그란?
+- 로그함수는 지수함수의 역함이다. - log2(8) = 3
+- 가장 흔하게 이진 로그를 쓴다. log === log2
+
+log n 시간 복잡도
+: O(1) 다음으로 좋음
+  log n 시간 복잡도를 갖고있다면 엄청 좋은 것임!
+
+n log n 시간 복잡도
+: 그렇게 좋진 않음, n제곱보단 좋음
