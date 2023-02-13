@@ -169,21 +169,68 @@
 # solution = Solution()
 # print(solution.numIslands(grid))
 
-def dailyTemperatures(temperatures):
-  answer = [0] * len(temperatures)
-  stack = []
-  for idx, value in enumerate(temperatures):
-    stack.append((idx, value))
+# def dailyTemperatures(temperatures):
+#   answer = [0] * len(temperatures)
+#   stack = []
+#   for idx, value in enumerate(temperatures):
+#     stack.append((idx, value))
 
-    while len(stack) > 1:
-      cur_idx, cur_val = stack[-1]
-      prev_idx, prev_val = stack[-2]
-      if cur_val < prev_val:
-        break
-      else:
-        answer[prev_idx] = cur_idx - prev_idx
-        del stack[-2]
+#     while len(stack) > 1:
+#       cur_idx, cur_val = stack[-1]
+#       prev_idx, prev_val = stack[-2]
+#       if cur_val < prev_val:
+#         break
+#       else:
+#         answer[prev_idx] = cur_idx - prev_idx
+#         del stack[-2]
 
-  return answer
+#   return answer
 
-dailyTemperatures([89,62,70,58,47,47,46,76,100,70])
+# dailyTemperatures([89,62,70,58,47,47,46,76,100,70])
+
+
+
+
+from collections import deque
+class Solution(object):
+  def numIslands(self, grid):
+    nums = 0
+    row = len(grid)
+    col = len(grid[0])
+
+    grid_check = [[False] * col for _ in range(row)]
+
+    def bfs(x, y):
+      dx = [-1, 1, 0, 0]
+      dy = [0, 0, -1, 1]
+      
+      grid_check[x][y] = True
+
+      queue = deque([(x, y)])
+
+      while queue:
+        cur_x, cur_y = queue.popleft()
+        for i in range(4):
+          next_x = cur_x + dx[i]
+          next_y = cur_y + dy[i]
+          if next_x >= 0 and next_y >= 0 and next_x < row and next_y < col:
+            if grid[next_x][next_y] == '1' and not grid_check[next_x][next_y]:
+              grid_check[next_x][next_y] = True
+              queue.append((next_x, next_y))
+
+    for i in range(row):
+      for j in range(col):
+        if grid[i][j] == '1' and not grid_check[i][j]:
+          bfs(i, j)
+          nums += 1
+
+    print(nums)
+    return nums
+
+solution = Solution()
+solution.numIslands([
+  ["1","1","0","0","0"],
+  ["1","1","0","0","0"],
+  ["0","0","1","0","0"],
+  ["0","0","0","1","1"]
+])

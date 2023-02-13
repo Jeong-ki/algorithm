@@ -1,3 +1,4 @@
+# BFS 풀이
 from collections import deque
 
 def numIslands(grid):
@@ -29,10 +30,44 @@ def numIslands(grid):
       if grid[i][j] == '1' and not visited[i][j]:
         bfs(i, j) # or dfs
         number_of_islands += 1
-        print(visited)
   return number_of_islands
 
-print(numIslands(grid = [
+# print(numIslands(grid = [
+#   ["1","1","0","0","0"],
+#   ["1","1","0","0","0"],
+#   ["0","0","1","0","0"],
+#   ["0","0","0","1","1"]
+# ]))
+
+# DFS 풀이
+def numIslands2(grid):
+  count = 0
+  row = len(grid)
+  col = len(grid[0])
+
+  def dfs(x, y):
+    if x < 0 or y < 0 or x == row or y == col:
+      return
+    
+    if grid[x][y] != "1":
+      return
+
+    grid[x][y] = 'V'
+
+    dfs(x - 1, y)
+    dfs(x + 1, y)
+    dfs(x, y -1)
+    dfs(x, y + 1)
+
+  for i in range(row):
+    for j in range(col):
+      if grid[i][j] == "1":
+        dfs(i, j)
+        count += 1
+  
+  return count
+
+print(numIslands2(grid=[
   ["1","1","0","0","0"],
   ["1","1","0","0","0"],
   ["0","0","1","0","0"],
